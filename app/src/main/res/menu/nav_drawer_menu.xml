@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_message_id"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_chat_id"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="Login" />
+        <item
+            android:id="@+id/nav_profile_id"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="My Orders" />
+        <item
+            android:id="@+id/nav_notebooks_id"
+            android:title="My Cart"
+            android:icon="@drawable/ic_book_black_24dp"
+            />
+    </group>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_send_id"
+                android:icon="@drawable/ic_send_black_24dp"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_share_id"
+                android:icon="@drawable/ic_publish_black_24dp"
+                android:title="FAQ's" />
+            <item
+                android:id="@+id/nav_photos_id"
+                android:title="Rate"
+                android:icon="@drawable/ic_photo_black_24dp"
+                />
+            <item
+                android:id="@+id/nav_trash_id"
+                android:title="Terms and Conditions"
+                android:icon="@drawable/ic_delete_black_24dp"
+                />
+            <item
+                android:id="@+id/nav_privacy"
+                android:title="Privacy Policy"
+                android:icon="@drawable/ic_delete_black_24dp"
+                />
+            <item
+                android:id="@+id/nav_about"
+                android:title="About us"
+                android:icon="@drawable/ic_delete_black_24dp"
+                />
+            <item
+                android:id="@+id/nav_contact"
+                android:title="Contact us"
+                android:icon="@drawable/ic_delete_black_24dp"
+                />
+        </menu>
+    </item>
+
+
+</menu>

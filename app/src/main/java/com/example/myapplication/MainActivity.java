@@ -1,7 +1,10 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +15,8 @@ import java.util.List;
 
 public class MainActivity extends header {
 
+
+    TextView textView2;
     //horizontal_menu_list
     public List<hmenulist> movieList = new ArrayList<>();
     public hmenuadapter mAdapter;
@@ -44,6 +49,15 @@ public class MainActivity extends header {
         arrayList1 = new ArrayList<productmodel>();
         arrayList = new ArrayList<>();
         mAdapter = new hmenuadapter(movieList);
+        textView2 = (TextView) findViewById(R.id.allcategory);
+
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,all_categories.class);
+                startActivity(intent);
+            }
+        });
 
 
         //Horizontal_menu_list
@@ -67,7 +81,7 @@ public class MainActivity extends header {
             //add in array list
             arrayList.add(itemModel);
         }
-        CustomAdapter adapter = new CustomAdapter(getApplicationContext(), arrayList);
+        cardadapter adapter = new cardadapter(getApplicationContext(), arrayList);
         recyclerView1.setAdapter(adapter);
 
         //for Products
@@ -89,7 +103,7 @@ public class MainActivity extends header {
             arrayList1.add(itemModels);
         }
 
-        CustomAdapter1 adapter1 = new CustomAdapter1(getApplicationContext(), arrayList1);
+        productadapter adapter1 = new productadapter(getApplicationContext(), arrayList1);
         recyclerView2.setAdapter(adapter1);
         recyclerView3.setAdapter(adapter1);
 

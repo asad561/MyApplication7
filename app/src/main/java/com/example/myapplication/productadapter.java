@@ -11,23 +11,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.text.BreakIterator;
 import java.util.ArrayList;
 
-class CustomAdapter1 extends RecyclerView.Adapter<CustomAdapter1.viewHolder> {
+class productadapter extends RecyclerView.Adapter<productadapter.viewHolder> {
     Context context;
     ArrayList<productmodel> arrayList1;
 
-    public CustomAdapter1(Context context, ArrayList<productmodel> arrayList1) {
+    public productadapter(Context context, ArrayList<productmodel> arrayList1) {
         this.context = context;
         this.arrayList1 = arrayList1;
     }
 
     @Override
-    public CustomAdapter1.viewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public productadapter.viewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(context).inflate(R.layout.product_view_list, viewGroup, false);
         return new viewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(CustomAdapter1.viewHolder viewHolder, int position) {
+    public void onBindViewHolder(productadapter.viewHolder viewHolder, int position) {
         viewHolder.iconname.setText(arrayList1.get(position).getSaveprice());
         viewHolder.icon.setImageResource(arrayList1.get(position).getImage());
         viewHolder.productname.setText(arrayList1.get(position).getProductname());

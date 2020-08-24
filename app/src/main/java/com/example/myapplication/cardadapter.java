@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
- class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.viewHolder> {
+ class cardadapter extends RecyclerView.Adapter<cardadapter.viewHolder> {
 
     Context context;
     ArrayList<cardmodel> arrayList;
 
-    public CustomAdapter(Context context, ArrayList<cardmodel> arrayList) {
+    public cardadapter(Context context, ArrayList<cardmodel> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }

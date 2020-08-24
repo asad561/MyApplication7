@@ -7,12 +7,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
-
+        tools:context=".MainActivity"
+        >
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_id"
             android:layout_width="match_parent"
@@ -21,22 +20,19 @@
             android:clickable="true"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-
 
                 <ImageView
                     android:layout_width="190dp"
                     android:layout_height="120dp"
                     android:layout_centerInParent="true"
                     android:layout_marginLeft="0dp"
+                    android:layout_alignRight="@id/toolbar_id"
                     android:src="@drawable/asd"
                     android:paddingRight="60dp"
-
-                    >
+                    tools:ignore="NotSibling">
 
                 </ImageView>
 
@@ -48,44 +44,57 @@
                     android:layout_marginLeft="68dp"
                     android:paddingTop="16dp"
                     android:src="@drawable/ic_shopping_cart_black_24dp"></ImageView>
-
-
             </RelativeLayout>
-
         </androidx.appcompat.widget.Toolbar>
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@color/colorPrimary"
+            android:layout_marginTop="50dp"
+            android:id="@+id/rel"
             >
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_below="@id/cart"
-            android:layout_marginTop="8dp"
-            android:paddingRight="20dp"
-            android:background="@drawable/rounded"
-            android:drawableStart="@drawable/ic_search_black_24dp"
-            android:drawableLeft="@drawable/ic_search_black_24dp"
-            android:drawablePadding="5dp"
-            android:hint="Search Product"
-            android:textColor="#6A6565"
-            android:textColorHint="#706E6E"
-            ></EditText>
-        </LinearLayout>
 
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_below="@id/cart"
+                android:layout_marginTop="8dp"
+                android:paddingRight="20dp"
+                android:background="@drawable/rounded"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="Search Product"
+                android:textColor="#6A6565"
+                android:textColorHint="#706E6E"
+                tools:ignore="NotSibling" />
+        </RelativeLayout>
         <ScrollView
-    android:id="@+id/scrol"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+            android:id="@+id/scrol"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rel"
+            >
 
-    <FrameLayout
-        android:id="@+id/framelayout_id"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
-</ScrollView>
-</LinearLayout>
+            <FrameLayout
+                android:id="@+id/framelayout_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></FrameLayout>
+        </ScrollView>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/menu"
+            >
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </RelativeLayout>
+
+
+
+
 
     <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
     <com.google.android.material.navigation.NavigationView
